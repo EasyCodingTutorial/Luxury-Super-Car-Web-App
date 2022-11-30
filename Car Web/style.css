@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Besley", serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+*::selection {
+  background: var(--main);
+  color: #000;
+}
+:root {
+  --main: #ff0000;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+section {
+  padding: 2rem 9%;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 3rem;
+  background: var(--main);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+/* Navbar/Header Start */
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 9%;
+  z-index: 10000;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+}
+.logo {
+  font-size: 2.5rem;
+  color: #000;
+  font-weight: bold;
+}
+.logo span {
+  color: var(--main);
+}
+#MenuBtn {
+  font-size: 2.5rem;
+  color: #555;
+  cursor: pointer;
+  display: none;
+}
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1.7rem;
+  color: #000;
+}
+.navbar a:hover {
+  color: var(--main);
+}
+#LoginBtn .btn {
+  margin-top: 0;
+}
+#LoginBtn i {
+  font-size: 2.5rem;
+  color: var(--main);
+  display: none;
+}
+
+/* Login Form Container */
+.LoginFormContainer {
+  position: fixed;
+  top: -105%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 10000;
+}
+.LoginFormContainer.active {
+  top: 0;
+}
+#CloseLoginForm {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  color: #000;
+  cursor: pointer;
+}
+.LoginFormContainer form {
+  margin: 2rem;
+  text-align: center;
+  padding: 2rem;
+  width: 40rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+  border: 0.1rem solid rgba(0, 0, 0, 0.5);
+}
+.LoginFormContainer form h3 {
+  font-size: 2.5rem;
+  color: #000;
+  padding-bottom: 1rem;
+}
+.LoginFormContainer form .box {
+  margin: 0.7rem 0;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #000;
+  text-transform: none;
+  border: 0.1rem solid rgba(0, 0, 0, 0.5);
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+.LoginFormContainer form p {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: #555;
+}
+.LoginFormContainer form p a {
+  color: var(--main);
+  text-decoration: underline;
+}
+.LoginFormContainer form .buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.LoginFormContainer form .btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+/* Navbar/Header End */
+
+/* Home Section Start */
+.home {
+  padding-top: 10rem;
+  text-align: center;
+  overflow-x: hidden;
+}
+.home h3 {
+  font-size: 7.5vw;
+  text-transform: uppercase;
+}
+.home img {
+  width: 100%;
+  margin-top: -20rem;
+}
+/* Home Section End */
+
+/* Media Query */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #MenuBtn {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.5);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .fa-times {
+    transform: rotate(360deg);
+  }
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  header .navbar a {
+    display: block;
+    margin: 2rem;
+    font-size: 2rem;
+  }
+  #LoginBtn .btn {
+    display: none;
+  }
+  #LoginBtn i {
+    display: block;
+  }
+  .home img {
+    margin-top: -10rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .home img {
+    margin-top: -10rem;
+  }
+}
